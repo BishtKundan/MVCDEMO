@@ -12,6 +12,19 @@ namespace MVCDEMO
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.config");
+
+            routes.MapRoute(
+                name: "Home",
+                url: "Home",
+                defaults: new { controller = "Home", action = "GotoHome", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Home1",
+                url: "",
+                defaults: new { controller = "Home", action = "GotoHome", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

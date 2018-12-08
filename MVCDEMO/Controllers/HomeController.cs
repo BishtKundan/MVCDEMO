@@ -8,23 +8,18 @@ namespace MVCDEMO.Controllers
 {
     public class HomeController : Controller
     {
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult GotoHome()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
+            ViewData["CurrentTime"] = DateTime.Now.ToString(); 
+            return View("home");
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }
